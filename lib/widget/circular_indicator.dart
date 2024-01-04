@@ -91,25 +91,44 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Flexible(
-                              flex: 4,
-                              child:Text(AppText.goalText,
-                                style: TextStyle(color: AppColors.textWhite,fontSize: 18),)
-                          ),
-                          Flexible(
-                              flex: 2,
-                              child: Container()
-                          ),
-                          Flexible(
-                              flex: 4,
-                              child: Text("\$"+"10000",
-                                style: TextStyle(color: AppColors.textWhite,fontSize: 18),)
-                          ),
-                        ],
+                      Container(
+                        margin: EdgeInsets.only(left: 20,right: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Flexible(
+                                flex: 4,
+                                child:Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(AppText.goalText,
+                                        style: TextStyle(color: AppColors.textWhite,fontSize: 18),),
+                                    ),
+                                    Container(
+                                      alignment: Alignment.topLeft,
+                                      child: Text("by Jan 2024",
+                                        style: TextStyle(color: AppColors.circularIndClr1,fontSize: 10),),
+                                    ),
+                                  ],
+                                )
+                            ),
+                            Flexible(
+                                flex: 2,
+                                child: Container()
+                            ),
+                            Flexible(
+                                flex: 4,
+                                child: Container(
+                                  alignment: Alignment.topRight,
+                                  child: Text("\u{20B9}"+"10000",
+                                    style: TextStyle(color: AppColors.textWhite,fontSize: 18),),
+                                )
+                            ),
+                          ],
+                        ),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 20),
@@ -139,7 +158,7 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                       flex: 4,
                                       child: Container(
                                         alignment: Alignment.topRight,
-                                        child: Text("126",
+                                        child: Text("\u{20B9}126",
                                           style: TextStyle(color: AppColors.textWhite,fontSize: 14),),
                                       )
                                   ),
@@ -164,7 +183,7 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                       flex: 4,
                                       child: Container(
                                         alignment: Alignment.topRight,
-                                        child: Text("123",
+                                        child: Text("\u{20B9}123",
                                           style: TextStyle(color: AppColors.textWhite,fontSize: 14),),
                                       )
                                   ),

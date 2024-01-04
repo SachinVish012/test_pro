@@ -15,7 +15,7 @@ class BottomWhite extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       margin: EdgeInsets.only(top: height1 / 1.6),
       //color: MyAppColor.YellowButton,
-      height: height1 / 2.5,
+      height: height1 / 2.7,
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColors.dashwhite,

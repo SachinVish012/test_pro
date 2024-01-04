@@ -102,7 +102,7 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                       children: [
                         Container(
                           alignment: Alignment.topRight,
-                          child: Text("\$150",style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: Text("\u{20B9}150",style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
                         ),
                         Container(
                           alignment: Alignment.topRight,
@@ -155,7 +155,7 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                       children: [
                         Container(
                           alignment: Alignment.topRight,
-                          child: Text("\$150",style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: Text("\u{20B9}150",style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
                         ),
                         Container(
                           alignment: Alignment.topRight,

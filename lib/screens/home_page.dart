@@ -30,8 +30,11 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-            TopBlue(), //----for top blue widget
-            BottomWhite(), //--------for bottom white widget
+            //----for top blue widget
+            TopBlue(),
+            //--------for bottom white widget
+            BottomWhite(),
+            //-----for top text
             Container(
               alignment: Alignment.topCenter,
               margin: EdgeInsets.only(top: height1/15),
@@ -44,7 +47,11 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(color: AppColors.textWhite,fontSize: 24,fontWeight: FontWeight.bold),
                     ),
                   ),
+
+                  //----for top widget,text,circular indicator
                   CircularIndicatorHome(),
+
+                  //-----for bottom contribution widget
                   ContributionHistory(),
              ],
               ),
