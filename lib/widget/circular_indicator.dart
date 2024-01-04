@@ -55,20 +55,11 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                 Container(
                   width: width1/3,
                   alignment: Alignment.topCenter,
-                  child: Text(
-                    "\u{20B9}100000",
-                    style: TextStyle(
-                        color: AppColors.textWhite,fontSize: 18,fontWeight: FontWeight.bold,
-                    )
-                    ,)
+                  child: text1(context, "\u{20B9}0000", AppColors.textWhite,18,FontWeight.bold)
                 ),
                 Container(
-                  child: Text(
-                      AppText.youSaved,
-                      style: TextStyle(
-                          color: AppColors.circularIndClr1,fontSize: 16
-                      )
-                  ),
+                  child:
+                  text1(context, AppText.youSaved, AppColors.circularIndClr1,16,FontWeight.normal)
                 )
               ],
             ),
@@ -104,13 +95,11 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                   children: [
                                     Container(
                                       alignment: Alignment.topLeft,
-                                      child: Text(AppText.goalText,
-                                        style: TextStyle(color: AppColors.textWhite,fontSize: 18),),
+                                      child: text1(context, AppText.goalText, AppColors.textWhite,18,FontWeight.normal)
                                     ),
                                     Container(
                                       alignment: Alignment.topLeft,
-                                      child: Text("by Jan 2024",
-                                        style: TextStyle(color: AppColors.circularIndClr1,fontSize: 10),),
+                                      child: text1(context, "by Jan 2024", AppColors.circularIndClr1, 10, FontWeight.normal)
                                     ),
                                   ],
                                 )
@@ -123,8 +112,7 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                 flex: 4,
                                 child: Container(
                                   alignment: Alignment.topRight,
-                                  child: Text("\u{20B9}"+"10000",
-                                    style: TextStyle(color: AppColors.textWhite,fontSize: 18),),
+                                  child: text1(context, "\u{20B9}11111", AppColors.textWhite, 18, FontWeight.normal)
                                 )
                             ),
                           ],
@@ -150,16 +138,14 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                       flex: 6,
                                       child:Container(
                                         alignment: Alignment.topLeft,
-                                        child: Text(AppText.needSaving,
-                                          style: TextStyle(color: AppColors.textWhite,fontSize: 14),),
+                                        child: text1(context, AppText.needSaving, AppColors.textWhite, 14, FontWeight.normal)
                                       )
                                   ),
                                   Flexible(
                                       flex: 4,
                                       child: Container(
                                         alignment: Alignment.topRight,
-                                        child: Text("\u{20B9}126",
-                                          style: TextStyle(color: AppColors.textWhite,fontSize: 14),),
+                                        child: text1(context, "\u{20B9}126", AppColors.textWhite, 14, FontWeight.normal)
                                       )
                                   ),
                                 ],
@@ -175,16 +161,14 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                       flex: 6,
                                       child:Container(
                                         alignment: Alignment.topLeft,
-                                        child: Text(AppText.monthlySaving,
-                                          style: TextStyle(color: AppColors.textWhite,fontSize: 14),),
+                                        child: text1(context, AppText.monthlySaving, AppColors.textWhite, 14, FontWeight.normal)
                                       )
                                   ),
                                   Flexible(
                                       flex: 4,
                                       child: Container(
                                         alignment: Alignment.topRight,
-                                        child: Text("\u{20B9}123",
-                                          style: TextStyle(color: AppColors.textWhite,fontSize: 14),),
+                                        child: text1(context, "\u{20B9}123", AppColors.textWhite, 14, FontWeight.normal)
                                       )
                                   ),
                                 ],
@@ -220,6 +204,14 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
       ),
     );
   }
+
+  //----text widget
+  Widget text1(BuildContext context,String text,color,double size,bold){
+    return Container(
+      child: Text(text,style: TextStyle(color: color,fontSize: size,fontWeight: bold,)),
+    );
+  }
+
   List<Widget> indicators(imagesLength, currentIndex) {
     return List<Widget>.generate(imagesLength, (index) {
       return Container(

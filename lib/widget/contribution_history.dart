@@ -87,12 +87,12 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                         Container(
                           alignment: Alignment.topLeft,
                           margin: EdgeInsets.only(left: 20),
-                          child: Text(AppText.totalAmount,style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: text1(context, AppText.totalAmount),
                         ),
                         Container(
                           alignment: Alignment.centerLeft,
                           margin: EdgeInsets.only(left: 20),
-                          child: Text(AppText.completionDate,style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: text1(context, AppText.completionDate),
                         ),
                       ],
                     )),
@@ -102,11 +102,11 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                       children: [
                         Container(
                           alignment: Alignment.topRight,
-                          child: Text("\u{20B9}150",style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                        child: text1(context, "\u{20B9}150"),
                         ),
                         Container(
                           alignment: Alignment.topRight,
-                          child: Text(DateTime.now().toString().substring(0,10),style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: text1(context, DateTime.now().toString().substring(0,10)),
                         ),
                       ],
                     )),
@@ -140,12 +140,12 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                         Container(
                           alignment: Alignment.topLeft,
                           margin: EdgeInsets.only(left: 20),
-                          child: Text(AppText.totalAmount,style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: text1(context, AppText.totalAmount),
                         ),
                         Container(
                           alignment: Alignment.centerLeft,
                           margin: EdgeInsets.only(left: 20),
-                          child: Text(AppText.completionDate,style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: text1(context, AppText.completionDate),
                         ),
                       ],
                     )),
@@ -155,11 +155,11 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                       children: [
                         Container(
                           alignment: Alignment.topRight,
-                          child: Text("\u{20B9}150",style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: text1(context, "\u{20B9}150"),
                         ),
                         Container(
                           alignment: Alignment.topRight,
-                          child: Text(DateTime.now().toString().substring(0,10),style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
+                          child: text1(context, DateTime.now().toString().substring(0,10)),
                         ),
                       ],
                     )),
@@ -168,6 +168,11 @@ class _ContributionHistoryState extends State<ContributionHistory> {
           ),
         ],
       ),
+    );
+  }
+  Widget text1(BuildContext context,String text){
+    return Container(
+      child: Text(text,style: TextStyle(color: AppColors.textblue2,fontSize: 14)),
     );
   }
 }
