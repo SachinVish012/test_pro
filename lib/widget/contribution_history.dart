@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -12,6 +13,30 @@ class ContributionHistory extends StatefulWidget {
 }
 
 class _ContributionHistoryState extends State<ContributionHistory> {
+  DatabaseReference ref = FirebaseDatabase.instance.ref('data/contribution');
+  String amount1="0";
+  String amount2="0";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    firebaseDataCall();
+  }
+  firebaseDataCall() async {
+    final amount11 = await ref.child('totalAmount1').get();
+    final amount22 = await ref.child('totalAmount2').get();
+    print(amount11.value);
+    if(amount11.value!=null&&amount22.value!=null)
+    {
+      print("not null");
+      setState(() {
+       amount1=amount11.value.toString();
+       amount2=amount22.value.toString();
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var height1 = MediaQuery
@@ -102,7 +127,7 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                       children: [
                         Container(
                           alignment: Alignment.topRight,
-                        child: text1(context, "\u{20B9}150"),
+                        child: text1(context, "\u{20B9}$amount1"),
                         ),
                         Container(
                           alignment: Alignment.topRight,
@@ -155,7 +180,7 @@ class _ContributionHistoryState extends State<ContributionHistory> {
                       children: [
                         Container(
                           alignment: Alignment.topRight,
-                          child: text1(context, "\u{20B9}150"),
+                          child: text1(context, "\u{20B9}$amount2"),
                         ),
                         Container(
                           alignment: Alignment.topRight,

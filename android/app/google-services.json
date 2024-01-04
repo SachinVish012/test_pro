@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "943795812431",
+    "firebase_url": "https://testproject-179f9-default-rtdb.firebaseio.com",
+    "project_id": "testproject-179f9",
+    "storage_bucket": "testproject-179f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943795812431:android:6ead97880f60b276d7d23a",
+        "android_client_info": {
+          "package_name": "com.test.test_pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_2FJ65nBWJ5h0gkrqk4D0q8NMSkrxpv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

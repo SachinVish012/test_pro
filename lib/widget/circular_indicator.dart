@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:test_pro/res/content/app_text.dart';
@@ -15,6 +16,36 @@ class CircularIndicatorHome extends StatefulWidget {
 
 class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
   int activePage = 0;
+  String saveAmount="0";
+  String goalAmount="0";
+  String savingAmount="0";
+  String monthSaveAmount="0";
+  DatabaseReference ref = FirebaseDatabase.instance.ref('data');
+
+  @override
+  initState(){
+    super.initState();
+    firebaseDataCall();
+  }
+
+  firebaseDataCall() async {
+    final goal1 = await ref.child('goalAmount').get();
+    final monthAmount1 = await ref.child('monthlySaving').get();
+    final saveAmount1 = await ref.child('saveAmount').get();
+    final savingAmount1 = await ref.child('savingAmount').get();
+    print(goal1.value);
+    if(goal1.value!=null&&monthAmount1.value!=null&&saveAmount1.value!=null&&savingAmount1.value!=null)
+      {
+        print("not null");
+        setState(() {
+          saveAmount=saveAmount1.value.toString();
+          goalAmount=goal1.value.toString();
+          savingAmount=savingAmount1.value.toString();
+          monthSaveAmount=monthAmount1.value.toString();
+        });
+      }
+  }
+
   @override
   Widget build(BuildContext context) {
       var height1 = MediaQuery
@@ -49,13 +80,14 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                 IconButton(
                     onPressed:(){
                       print("Home Pressed");
+                      //firebasewrite();
                     },
                     icon: Icon(Icons.home,color: AppColors.textWhite,size: 60,)
                 ),
                 Container(
                   width: width1/3,
                   alignment: Alignment.topCenter,
-                  child: text1(context, "\u{20B9}0000", AppColors.textWhite,18,FontWeight.bold)
+                  child: text1(context, "\u{20B9}"+saveAmount, AppColors.textWhite,18,FontWeight.bold)
                 ),
                 Container(
                   child:
@@ -112,7 +144,7 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                 flex: 4,
                                 child: Container(
                                   alignment: Alignment.topRight,
-                                  child: text1(context, "\u{20B9}11111", AppColors.textWhite, 18, FontWeight.normal)
+                                  child: text1(context, "\u{20B9}"+goalAmount, AppColors.textWhite, 18, FontWeight.normal)
                                 )
                             ),
                           ],
@@ -145,7 +177,7 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                       flex: 4,
                                       child: Container(
                                         alignment: Alignment.topRight,
-                                        child: text1(context, "\u{20B9}126", AppColors.textWhite, 14, FontWeight.normal)
+                                        child: text1(context, "\u{20B9}"+savingAmount, AppColors.textWhite, 14, FontWeight.normal)
                                       )
                                   ),
                                 ],
@@ -168,7 +200,7 @@ class _CircularIndicatorHomeState extends State<CircularIndicatorHome> {
                                       flex: 4,
                                       child: Container(
                                         alignment: Alignment.topRight,
-                                        child: text1(context, "\u{20B9}123", AppColors.textWhite, 14, FontWeight.normal)
+                                        child: text1(context, "\u{20B9}"+monthSaveAmount, AppColors.textWhite, 14, FontWeight.normal)
                                       )
                                   ),
                                 ],
